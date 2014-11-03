@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lineChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.data1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
@@ -53,87 +52,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtFile = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.lineChart)).BeginInit();
+            this.lineChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lineChart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lineChart
-            // 
-            this.lineChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea2.AxisX.Interval = 1D;
-            chartArea2.AxisX.IsMarginVisible = false;
-            chartArea2.AxisX.IsStartedFromZero = false;
-            chartArea2.AxisX.LabelStyle.Format = "{d}:00";
-            chartArea2.AxisX.Minimum = 0D;
-            chartArea2.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.No;
-            chartArea2.AxisX.ScrollBar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.AxisX.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
-            chartArea2.AxisX.ScrollBar.IsPositionedInside = false;
-            chartArea2.AxisX.ScrollBar.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisX.ScrollBar.Size = 12D;
-            chartArea2.AxisX.Title = "時間";
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
-            chartArea2.AxisX2.MajorGrid.Enabled = false;
-            chartArea2.AxisX2.MaximumAutoSize = 0F;
-            chartArea2.AxisX2.ScrollBar.Enabled = false;
-            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.LabelStyle.Format = "{d}°C";
-            chartArea2.AxisY.Maximum = 40D;
-            chartArea2.AxisY.Minimum = -40D;
-            chartArea2.AxisY.ScrollBar.BackColor = System.Drawing.Color.White;
-            chartArea2.AxisY.ScrollBar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.AxisY.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.ResetZoom;
-            chartArea2.AxisY.ScrollBar.Enabled = false;
-            chartArea2.AxisY.ScrollBar.IsPositionedInside = false;
-            chartArea2.AxisY.ScrollBar.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY.ScrollBar.Size = 12D;
-            chartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
-            chartArea2.AxisY.Title = "温度";
-            chartArea2.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea2.AxisY2.LabelStyle.Format = "{d}%";
-            chartArea2.AxisY2.Maximum = 100D;
-            chartArea2.AxisY2.MaximumAutoSize = 10F;
-            chartArea2.AxisY2.Minimum = 0D;
-            chartArea2.AxisY2.ScrollBar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea2.AxisY2.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
-            chartArea2.AxisY2.ScrollBar.IsPositionedInside = false;
-            chartArea2.AxisY2.ScrollBar.LineColor = System.Drawing.Color.Silver;
-            chartArea2.AxisY2.ScrollBar.Size = 12D;
-            chartArea2.AxisY2.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
-            chartArea2.AxisY2.Title = "湿度";
-            chartArea2.BorderWidth = 2;
-            chartArea2.IsSameFontSizeForAllAxes = true;
-            chartArea2.Name = "ChartArea1";
-            this.lineChart.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            legend2.Title = "Legend";
-            this.lineChart.Legends.Add(legend2);
-            this.lineChart.Location = new System.Drawing.Point(143, 0);
-            this.lineChart.Name = "lineChart";
-            series3.BorderWidth = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Color = System.Drawing.Color.Red;
-            series3.Legend = "Legend1";
-            series3.Name = "温度";
-            series4.BorderWidth = 2;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Violet;
-            series4.Legend = "Legend1";
-            series4.Name = "湿度";
-            series4.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.lineChart.Series.Add(series3);
-            this.lineChart.Series.Add(series4);
-            this.lineChart.Size = new System.Drawing.Size(974, 435);
-            this.lineChart.TabIndex = 0;
             // 
             // data1
             // 
@@ -145,41 +68,41 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data1.BackgroundColor = System.Drawing.Color.White;
             this.data1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.data1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.NullValue = null;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data1.DefaultCellStyle = dataGridViewCellStyle11;
             this.data1.EnableHeadersVisualStyles = false;
-            this.data1.Location = new System.Drawing.Point(83, 441);
+            this.data1.Location = new System.Drawing.Point(83, 445);
             this.data1.Name = "data1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.data1.RowHeadersVisible = false;
             this.data1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.data1.RowTemplate.Height = 21;
             this.data1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.data1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.data1.Size = new System.Drawing.Size(1004, 102);
+            this.data1.Size = new System.Drawing.Size(868, 102);
             this.data1.TabIndex = 1;
             this.data1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cell_Validated);
             this.data1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.data1_CellValidating);
@@ -188,8 +111,8 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(5, 394);
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(5, 398);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 41);
             this.button1.TabIndex = 8;
@@ -256,7 +179,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 441);
+            this.label2.Location = new System.Drawing.Point(23, 445);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 12);
             this.label2.TabIndex = 18;
@@ -266,7 +189,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 467);
+            this.label3.Location = new System.Drawing.Point(23, 471);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 19;
@@ -276,7 +199,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 488);
+            this.label4.Location = new System.Drawing.Point(22, 492);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 20;
@@ -286,7 +209,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 510);
+            this.label5.Location = new System.Drawing.Point(23, 514);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 21;
@@ -296,7 +219,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1095, 510);
+            this.label6.Location = new System.Drawing.Point(959, 514);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 12);
             this.label6.TabIndex = 24;
@@ -306,7 +229,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1093, 488);
+            this.label7.Location = new System.Drawing.Point(957, 492);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 12);
             this.label7.TabIndex = 23;
@@ -316,7 +239,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1093, 467);
+            this.label8.Location = new System.Drawing.Point(957, 471);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 12);
             this.label8.TabIndex = 22;
@@ -360,12 +283,96 @@
             this.txtFile.Size = new System.Drawing.Size(70, 19);
             this.txtFile.TabIndex = 29;
             // 
+            // lineChart
+            // 
+            this.lineChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea4.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea4.AxisX.Interval = 1D;
+            chartArea4.AxisX.IsMarginVisible = false;
+            chartArea4.AxisX.IsStartedFromZero = false;
+            chartArea4.AxisX.LabelStyle.Format = "{d}:00";
+            chartArea4.AxisX.Minimum = 0D;
+            chartArea4.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.No;
+            chartArea4.AxisX.ScrollBar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea4.AxisX.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
+            chartArea4.AxisX.ScrollBar.IsPositionedInside = false;
+            chartArea4.AxisX.ScrollBar.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisX.ScrollBar.Size = 12D;
+            chartArea4.AxisX.Title = "時間";
+            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+            chartArea4.AxisX2.MajorGrid.Enabled = false;
+            chartArea4.AxisX2.MaximumAutoSize = 0F;
+            chartArea4.AxisX2.ScrollBar.Enabled = false;
+            chartArea4.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea4.AxisY.IsStartedFromZero = false;
+            chartArea4.AxisY.LabelStyle.Format = "{d}°C";
+            chartArea4.AxisY.MajorGrid.Enabled = false;
+            chartArea4.AxisY.MajorTickMark.Enabled = false;
+            chartArea4.AxisY.Maximum = 30D;
+            chartArea4.AxisY.Minimum = -30D;
+            chartArea4.AxisY.ScrollBar.BackColor = System.Drawing.Color.White;
+            chartArea4.AxisY.ScrollBar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea4.AxisY.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.ResetZoom;
+            chartArea4.AxisY.ScrollBar.Enabled = false;
+            chartArea4.AxisY.ScrollBar.IsPositionedInside = false;
+            chartArea4.AxisY.ScrollBar.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisY.ScrollBar.Size = 12D;
+            chartArea4.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
+            chartArea4.AxisY.Title = "温度";
+            chartArea4.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea4.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            chartArea4.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea4.AxisY2.LabelStyle.Format = "{d}%";
+            chartArea4.AxisY2.Maximum = 100D;
+            chartArea4.AxisY2.MaximumAutoSize = 10F;
+            chartArea4.AxisY2.Minimum = 0D;
+            chartArea4.AxisY2.ScrollBar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea4.AxisY2.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
+            chartArea4.AxisY2.ScrollBar.IsPositionedInside = false;
+            chartArea4.AxisY2.ScrollBar.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisY2.ScrollBar.Size = 12D;
+            chartArea4.AxisY2.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
+            chartArea4.AxisY2.Title = "湿度";
+            chartArea4.AxisY2.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea4.AxisY2.TitleForeColor = System.Drawing.Color.Red;
+            chartArea4.BorderWidth = 2;
+            chartArea4.IsSameFontSizeForAllAxes = true;
+            chartArea4.Name = "ChartArea1";
+            this.lineChart.ChartAreas.Add(chartArea4);
+            legend4.Enabled = false;
+            legend4.Name = "Legend1";
+            legend4.Title = "Legend";
+            this.lineChart.Legends.Add(legend4);
+            this.lineChart.Location = new System.Drawing.Point(143, 4);
+            this.lineChart.Name = "lineChart";
+            series7.BorderWidth = 2;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Color = System.Drawing.Color.Red;
+            series7.Legend = "Legend1";
+            series7.Name = "温度";
+            series8.BorderWidth = 2;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Color = System.Drawing.Color.Violet;
+            series8.Legend = "Legend1";
+            series8.Name = "湿度";
+            series8.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.lineChart.Series.Add(series7);
+            this.lineChart.Series.Add(series8);
+            this.lineChart.Size = new System.Drawing.Size(835, 435);
+            this.lineChart.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1120, 557);
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.lineChart);
             this.Controls.Add(this.txtFile);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -383,15 +390,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.data1);
-            this.Controls.Add(this.lineChart);
+            this.MaximumSize = new System.Drawing.Size(1200, 800);
+            this.MinimumSize = new System.Drawing.Size(871, 526);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "パターン設定";
+            this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.lineChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lineChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,7 +408,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart lineChart;
         private System.Windows.Forms.DataGridView data1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRead;
@@ -417,6 +425,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtFile;
+        private System.Windows.Forms.DataVisualization.Charting.Chart lineChart;
     }
 }
 

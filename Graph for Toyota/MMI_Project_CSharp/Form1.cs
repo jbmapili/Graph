@@ -78,10 +78,27 @@ namespace MMI_Project_CSharp
                 if (value2 > max2) max2 = value2;
                 else if (value2 < min2) min2 = value2;
             }
-            if (max > 40) { x.AxisY.Maximum = Math.Ceiling(max); }
-            if (min < -40) { x.AxisY.Minimum = Math.Floor(min); }
-            if (max2 > 100) { x.AxisY2.Maximum = Math.Ceiling(max2); }
-            if (min2 < 0) { x.AxisY2.Minimum = Math.Floor(min2); }
+            if (max > 30) 
+            {
+                max = (10 - (max % 10)) + max;
+                x.AxisY.Maximum = Math.Ceiling(max);
+            }
+            if (min < -30) 
+            {
+                min = ((-10 - (min % 10)) + min);
+                x.AxisY.Minimum = Math.Floor((min)); 
+            }
+            if (max2 > 100) 
+            {
+                max2 = (100 - (max2 % 100)) + max2;
+                x.AxisY2.Maximum = Math.Ceiling(max2); 
+            }
+            if (min2 < 0) 
+            {
+                min2 = ((-100 - (min2 % 100)) + min2);
+                x.AxisY2.Minimum = Math.Floor(min2); 
+            }
+            x.AxisY.Interval = 10;
         }
         private void plot_Line(double timeLine, double temp, double humid)
         {
@@ -249,7 +266,7 @@ namespace MMI_Project_CSharp
                 }
                 if (prevCellTime > 0)
                 {
-                    double value = Convert.ToDouble(currentCellTime.Value) * 0.6;
+                    double value = Convert.ToDouble(currentCellTime.Value) * Properties.Settings.Default.ChangePerHour;
                     if ((Convert.ToDouble(currentCellTemp.Value) <= (Convert.ToDouble(prevCellTemp.Value) + value) &&
                          Convert.ToDouble(currentCellTemp.Value) >= (Convert.ToDouble(prevCellTemp.Value) - value)))
                     {
@@ -260,7 +277,7 @@ namespace MMI_Project_CSharp
                     }
                     else
                     {
-                        currentCellTemp.ErrorText = "温度変化は 0.6℃/分を超えることは出来ません。";
+                        currentCellTemp.ErrorText = string.Format("温度変化は {0}℃/分を超えることは出来ません。", Properties.Settings.Default.ChangePerHour);
                     }
                 }
             }
@@ -434,12 +451,14 @@ namespace MMI_Project_CSharp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Deactivate -= Form1_Deactivate;
             ds = new DataSet();
             dt = new DataTable();
             dt = GetGraphFile(txtFile.Text);
             ds.Tables.Add(dt);
             flip();
             check();
+            this.Deactivate += Form1_Deactivate;
         }
         private DataTable GetGraphFile(string num)
         {            
@@ -451,7 +470,7 @@ namespace MMI_Project_CSharp
             table.Columns.Add("湿度", typeof(double));
 
             OpenFileDialog oFDialog = new OpenFileDialog();
-            oFDialog.FileName = txtFile.Text + ".csv";
+            oFDialog.FileName = txtFile.Text == "" ? "" : txtFile.Text+".csv";
             oFDialog.Filter = txtFile.Text + ".csv|*.csv";
             if (oFDialog.ShowDialog() == DialogResult.OK)
             {
@@ -480,6 +499,7 @@ namespace MMI_Project_CSharp
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Deactivate -= Form1_Deactivate;
             for (int i = 0; i < 24; i++)
             {
                 if (Convert.ToDouble(data1.Rows[0].Cells[i].Value) == 0)
@@ -515,11 +535,17 @@ namespace MMI_Project_CSharp
             {
                 MessageBox.Show("エラーが出ているためファイルを書き込めません。", "書込ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.Deactivate += Form1_Deactivate;
         }
 
         private void btnUpdate(object sender, EventArgs e)
         {
             check();
+        }
+
+        private void Form1_Deactivate(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -3,19 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="UpperTime" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">1000</Value>
+      <Value Profile="(Default)">10000</Value>
     </Setting>
     <Setting Name="UpperTemp" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">35</Value>
     </Setting>
     <Setting Name="LowerTemp" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">-100</Value>
+      <Value Profile="(Default)">-35</Value>
     </Setting>
     <Setting Name="UpperHum" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">1000</Value>
+      <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="LowerHum" Type="System.Double" Scope="Application">
-      <Value Profile="(Default)">-100</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Device" Type="System.String" Scope="Application">
       <Value Profile="(Default)">DEV1</Value>
@@ -25,6 +25,9 @@
     </Setting>
     <Setting Name="Pattern1Start" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">4192</Value>
+    </Setting>
+    <Setting Name="ChangePerHour" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.6</Value>
     </Setting>
   </Settings>
 </SettingsFile>
