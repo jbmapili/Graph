@@ -198,6 +198,7 @@ namespace MMI_Project_CSharp
         }
         private void btnWrite_Click(object sender, EventArgs e)
         {
+            this.Deactivate -= Form1_Deactivate;
             if (!HasErrorText())
             {
                 int start = patternStart + ((Convert.ToInt32(numUpDown.Text) - 1) * 72);
@@ -219,12 +220,23 @@ namespace MMI_Project_CSharp
                         valTmp.Add( Convert.ToDouble(data1.Rows[1].Cells[i].Value) * 10);
                         valHmd.Add( Convert.ToDouble(data1.Rows[2].Cells[i].Value) * 10 );
                     }
-                    int[] nErrorArray = new int[]{0};
-                    opc.Write(targetTime.ToArray(), valTime.ToArray(), out nErrorArray);
-                    opc.Write(targetTmp.ToArray(), valTmp.ToArray(), out nErrorArray);
-                    opc.Write(targetHmd.ToArray(), valHmd.ToArray(), out nErrorArray);
+                    int[] nErrorArray = new int[] { 0 };
+                    if (opc.Write(targetTime.ToArray(), valTime.ToArray(), out nErrorArray) &&
+                        opc.Write(targetTmp.ToArray(), valTmp.ToArray(), out nErrorArray) &&
+                        opc.Write(targetHmd.ToArray(), valHmd.ToArray(), out nErrorArray)
+                        )
+                    {
+                        Debug.WriteLine("Writing values succeeded!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot write values to the OPC Server");
+                        this.Deactivate += Form1_Deactivate;
+                        return;
+                    }
                     if (nErrorArray[0] != 0)
                     {
+                        this.Deactivate += Form1_Deactivate;
                         return;
                     }
                 }
@@ -237,7 +249,7 @@ namespace MMI_Project_CSharp
             {
                 MessageBox.Show("エラーが出ているため登録できません。", "書込ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            this.Deactivate += Form1_Deactivate;
         }
         private void check_Time()
         {
@@ -330,6 +342,7 @@ namespace MMI_Project_CSharp
 
         private void btnRead_Click(object sender, EventArgs e)
         {
+            this.Deactivate -= Form1_Deactivate;
             ds = new DataSet();
             dt = new DataTable();
 
@@ -340,7 +353,7 @@ namespace MMI_Project_CSharp
             flip();
 
             check();
-
+            this.Deactivate += Form1_Deactivate;
         }
 
         private void flip()
@@ -400,6 +413,7 @@ namespace MMI_Project_CSharp
             short[] wQualityArray;
             FILETIME[] fTimeArray;
             int[] nErrorArray;
+            bool readError = false;
             for (int i = 0; i < 24; i++)
             {
                 target=new string[] { DEV_NAME + "." + WORD_PREF + "" + (start + i).ToString("X"), 
@@ -411,8 +425,23 @@ namespace MMI_Project_CSharp
                     {
                         table.Rows.Add(new object[] { oValueArray[0], Convert.ToDouble(oValueArray[1]) / 10, Convert.ToDouble(oValueArray[2]) / 10 });
                     }
+                    else
+                    {
+                        Debug.WriteLine("Error reading " +
+                                            DEV_NAME + "." + WORD_PREF + "" + (start + i).ToString("X") + " " +
+                                            DEV_NAME + "." + WORD_PREF + "" + (start + 24 + i).ToString("X") + " " +
+                                            DEV_NAME + "." + WORD_PREF + "" + (start + 48 + i).ToString("X"));
+                        readError = true;
+                        table.Rows.Add(new object[] { data1.Rows[0].Cells[i].Value,
+                                                         Convert.ToDouble(data1.Rows[1].Cells[i].Value),
+                                                         Convert.ToDouble(data1.Rows[2].Cells[i].Value)});
+                    }
                 }
                 catch (Exception) { }
+            }
+            if (readError == true)
+            {
+                MessageBox.Show("Cannot read values from the OPC Server");
             }
             table.AcceptChanges();
             return table;
@@ -540,7 +569,9 @@ namespace MMI_Project_CSharp
 
         private void btnUpdate(object sender, EventArgs e)
         {
+            this.Deactivate -= Form1_Deactivate;
             check();
+            this.Deactivate += Form1_Deactivate;
         }
 
         private void Form1_Deactivate(object sender, EventArgs e)
